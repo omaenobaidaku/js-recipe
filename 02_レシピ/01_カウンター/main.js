@@ -28,16 +28,14 @@ times2Button.onclick = function () {
 
 const fizzBuzz = function (n) {
   if (n % 3 === 0 && n % 5 === 0) {
-    return "Fi" + "z".repeat(n / 3) + "Bu" + "z".repeat(n / 5)
-    console.log("FizzBuzz")
+    return (
+      "Fi" + "z".repeat(Math.abs(n / 3)) + "Bu" + "z".repeat(Math.abs(n / 5))
+    )
   } else if (n % 3 === 0) {
-    return "Fi" + "z".repeat(n / 3)
-    console.log("Fizz")
+    return "Fi" + "z".repeat(Math.abs(n / 3))
   } else if (n % 5 === 0) {
-    return "Bu" + "z".repeat(n / 5)
-    console.log("Buzz")
+    return "Bu" + "z".repeat(Math.abs(n / 5))
   } else {
     return n
-    console.log(n)
   }
 }
