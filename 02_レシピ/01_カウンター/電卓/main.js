@@ -56,26 +56,30 @@ otherButtons.children[0].onclick = function () {
 
 //以下、演算子ボタンのイベントハンドラ
 operatorButtons.onclick = function (e) {
-  //入力のブロックを解除
-  inputNumber.disabled = null
+  if (e.target.tagName === "BUTTON") {
+    //入力のブロックを解除
+    inputNumber.disabled = null
 
-  //押されたボタンのindexを取得
-  let index = Array.prototype.indexOf.call(operatorButtons.children, e.target)
-  console.log("index: " + index)
+    //押されたボタンのindexを取得
+    let index = Array.prototype.indexOf.call(operatorButtons.children, e.target)
+    console.log("index: " + index)
 
-  if (index === 0) {
-    operator = "plus"
-    display2.textContent = "➕️"
-  } else if (index === 1) {
-    operator = "minus"
-    display2.textContent = "➖️"
-  } else if (index === 2) {
-    operator = "times"
-    display2.textContent = "✖"
-  } else if (index === 3) {
-    operator = "dividedBy"
-    display2.textContent = "➗️"
+    if (index === 0) {
+      operator = "plus"
+      display2.textContent = "➕️"
+    } else if (index === 1) {
+      operator = "minus"
+      display2.textContent = "➖️"
+    } else if (index === 2) {
+      operator = "times"
+      display2.textContent = "✖"
+    } else if (index === 3) {
+      operator = "dividedBy"
+      display2.textContent = "➗️"
+    }
+
+    console.log("operator: " + operator)
+  } else {
+    console.log("ボタン以外のクリック")
   }
-
-  console.log("operator: " + operator)
 }

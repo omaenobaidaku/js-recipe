@@ -1,5 +1,5 @@
 const figure = document.getElementById("figure")
 
-figure.onclick = function () {
+window.onresize = function () {
   figure.classList.toggle("rounded")
 }
