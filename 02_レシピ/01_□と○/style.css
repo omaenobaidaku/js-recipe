@@ -3,11 +3,25 @@
 }
 
 .square {
-  width: 100px;
-  height: 100px;
-  background-color: black;
+  width: 0px;
+  height: 0px;
+  background-color: transparent;
+  border-top: 50px solid black;
+  border-right: 50px solid black;
+  border-bottom: 50px solid black;
+  border-left: 50px solid black;
 }
 
 .rounded {
-  border-radius: 50px;
+  border-radius: 50%;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  border: calc(100px - 86.6025px) solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 86.6025px solid black;
+  border-left: 50px solid transparent;
 }
