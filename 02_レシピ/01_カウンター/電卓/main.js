@@ -10,6 +10,8 @@ let operator, num1, num2
 inputNumber.onchange = function (e) {
   num2 = e.target.valueAsNumber
   console.log("num2: " + num2)
+
+  otherButtons.children[0].disabled = null
 }
 
 //オールクリア
@@ -18,6 +20,7 @@ otherButtons.children[2].onclick = function () {
   display2.textContent = "　"
   inputNumber.value = null
   inputNumber.disabled = "disabled"
+  otherButtons.children[0].disabled = "disabled"
   operator = null
 
   console.log("オールクリア")
@@ -28,6 +31,7 @@ const clear = function () {
   display2.textContent = "　"
   inputNumber.value = null
   inputNumber.disabled = "disabled"
+  otherButtons.children[0].disabled = "disabled"
   operator = null
 
   console.log("クリア")
