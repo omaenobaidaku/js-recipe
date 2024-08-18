@@ -9,6 +9,8 @@ const byousin = function () {
   seconds++
 }
 
+setInterval(byousin, 1000)
+
 const clock = document.getElementById("clock")
 let now, second, time
 
