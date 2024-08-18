@@ -6,9 +6,9 @@
   width: 0px;
   height: 0px;
   background-color: transparent;
-  border-top: 50px solid black;
+  border-top: 0px solid black;
   border-right: 50px solid black;
-  border-bottom: 50px solid black;
+  border-bottom: 100px solid black;
   border-left: 50px solid black;
 }
 
@@ -24,4 +24,30 @@
   border-right: 50px solid transparent;
   border-bottom: 86.6025px solid black;
   border-left: 50px solid transparent;
+}
+
+.shape {
+  width: 200px;
+  height: 200px;
+  background-color: black;
+  clip-path: circle(50%);
+  transition: clip-path 1s ease-in-out;
+  transition-property: clip-path;
+  transition-duration: 1s;
+}
+
+.shape:hover {
+  animation: morph 1s forwards;
+}
+
+@keyframes morph {
+  0% {
+    clip-path: circle(50%);
+  }
+  50% {
+    clip-path: inset(0 0 0 0 round 50% 50% 0 0); /* 中間形状 */
+  }
+  100% {
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  }
 }
