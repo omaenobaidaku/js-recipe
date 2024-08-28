@@ -2,14 +2,23 @@ const inputElement = document.getElementById("input-todo")
 const container = document.getElementById("cards-container")
 const addButton = document.getElementById("add-button")
 
-// 追加ボタンを押したときの処理を登録
-addButton.onclick = function () {
+const addTodo = function () {
   // カードを作成する
   const card = createCard(inputElement.value)
   container.append(card)
 
   // 入力欄を空にする
   inputElement.value = ""
+}
+
+// 追加ボタンを押したときの処理を登録
+addButton.onclick = addTodo
+
+// EnterKeyを押したときの処理を登録
+inputElement.onkeydown = function (e) {
+  if (e.key === "Enter") {
+    addTodo()
+  }
 }
 
 // 共通の処理：テキストからカードを作成する
